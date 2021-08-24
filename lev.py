@@ -2,10 +2,9 @@ import argparse
 parser = argparse.ArgumentParser(description='Perform Levenshtein clustering with a spell check ranking.')
 req = parser.add_argument_group('Required arguments')
 parser.add_argument("-p", "--path", help="path to file of new line delimited strings.", required=True)
-parser.add_argument("-r", "--radius", help="Radius for PPM clustering. Default is 2.0", type=float, default=2.0)
+parser.add_argument("-r", "--radius", help="Allowed degree of Levenshtein Distance for clustering. Default is 2.0", type=float, default=2.0)
 parser.add_argument("-o", "--out", help="Output file containing clustered data. Default is ./out.txt", default="./out.txt")
 req = parser.parse_args()
-import ppmd
 import io
 import hunspell
 import re
